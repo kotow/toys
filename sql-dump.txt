@@ -1,0 +1,62 @@
+-- phpMyAdmin SQL Dump
+-- version 3.1.3.1
+-- http://www.phpmyadmin.net
+--
+-- Хост: localhost
+-- Време на генериране:  декември 2014 в 00:31
+-- Версия на сървъра: 5.1.33
+-- Версия на PHP: 5.2.9
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- БД: `toys`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Структура на таблица `toys`
+--
+
+DROP TABLE IF EXISTS `toys`;
+CREATE TABLE IF NOT EXISTS `toys` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `image` text CHARACTER SET utf8 NOT NULL,
+  `name` text CHARACTER SET utf8 NOT NULL,
+  `gender` text CHARACTER SET utf8 NOT NULL,
+  `age` text CHARACTER SET utf8 NOT NULL,
+  `price` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`ID`),
+  FULLTEXT KEY `image` (`image`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=25 ;
+
+--
+-- Дъмп (схема) на данните в таблицата `toys`
+--
+
+INSERT INTO `toys` (`ID`, `image`, `name`, `gender`, `age`, `price`) VALUES
+(1, '/images/toy1.jpg', 'toy', 'm', '0-2', 12),
+(2, '/images/toy1.jpg', 'toy2', 'f', '12+', 23),
+(3, '/images/toy1.jpg', 'toy3', 'm/f', '4-8', 123),
+(4, '/images/toy1.jpg', 'toy3', 'm', '0-2', 123),
+(5, '/images/toy1.jpg', 'link', 'f', '0-2', 22),
+(6, '/images/toy1.jpg', 'toy', 'm', '0-2', 12),
+(7, '/images/toy1.jpg', 'toy2', 'f', '12+', 23),
+(8, '/images/toy1.jpg', 'toy3', 'm/f', '4-8', 123),
+(9, '/images/toy1.jpg', 'toy3', 'm', '0-2', 123),
+(10, '/images/toy1.jpg', 'link', 'f', '0-2', 22),
+(11, '/images/toy1.jpg', 'toy', 'm', '0-2', 12),
+(12, '/images/toy1.jpg', 'toy2', 'f', '12+', 23),
+(13, '/images/toy1.jpg', 'toy3', 'm/f', '4-8', 123),
+(14, '/images/toy1.jpg', 'toy3', 'm', '0-2', 123),
+(15, '/images/toy1.jpg', 'link', 'f', '0-2', 22),
+(16, '/images/toy1.jpg', 'toy', 'm', '0-2', 12),
+(17, '/images/toy1.jpg', 'toy2', 'f', '12+', 23),
+(18, '/images/toy1.jpg', 'toy3', 'm/f', '4-8', 123),
+(19, '/images/toy1.jpg', 'toy3', 'm', '0-2', 123),
+(20, '/images/toy1.jpg', 'link', 'f', '0-2', 22),
+(21, '/images/toy1.jpg', 'toy', 'm', '0-2', 123),
+(22, '/images/toy1.jpg', 'toy', 'm', '0-2', 123),
+(23, '/images/toy1.jpg', 'toy', 'm', '0-2', 12),
+(24, '/images/toy1.jpg', 'toy', 'm', '0-2', 12);
