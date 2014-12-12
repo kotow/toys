@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>jQuery UI Slider - Range slider</title>
+	<title>Toys-filter</title>
 	<link rel="stylesheet" href="Style/style.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -30,7 +30,7 @@
 			<fieldset>
 			<h2>Възраст:</h2>
 			<select name="age">
-				<option value="all">Всички</option>
+				<option value="all" class="all">Избери възраст</option>
 				<option value="0-2">0-2</option>
 				<option value="2-4">2-4</option>
 				<option value="4-8">4-8</option>
@@ -40,15 +40,15 @@
 			</fieldset>			<fieldset>
 			<h2>Пол:</h2>
 			<div class="radio">
-			<input type="radio" name="gender" value="m"/>МОМЧЕ
-			<input type="radio" name="gender" value="f"/>МОМИЧЕ
-			<input type="radio" name="gender" checked="checked" value="m/f"/>И ДВЕТЕ
+			<input type="radio" name="gender" value="m"/><label>МОМЧЕ</label>
+			<input type="radio" name="gender" value="f"/><label>МОМИЧЕ</label>
+			<input type="radio" name="gender" checked="checked" value="m/f"/><label>И ДВЕТЕ</label>
 			</div>
 			</fieldset>
 				<fieldset>
 			<h2>Цена:</h2>
 			<div id="slider-range"></div>
-			<input type="text" name="price" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+			<input type="text" name="price" id="amount">
 			</fieldset>
 			<fieldset><input type="submit" value="ТЪРСИ" class="myButton"/><input type="hidden" name="page" value="1"/></fieldset>
 		</form>
@@ -85,11 +85,11 @@ if(isset($_GET["age"])) {
 	$filter = " WHERE ".$ageFilter."(price > '".$minPrice."' AND price < '".$maxPrice."')".$genderFilter;
 }
 
-if($_GET['page']){
-$page  = $_GET['page'];
+if(isset($_GET['page'])){
+	$page  = $_GET['page'];
 } else {
 	$page = 1;
-	$_GET['page'] = $page;
+	$_GET['page'] = $page + 1;
 }
 
 $rs_result = $conn->query("SELECT COUNT(`id`) FROM toys".$filter);
@@ -97,9 +97,9 @@ $row = mysqli_fetch_row($rs_result);
 $total_records = $row[0];
 $total_pages = ceil($total_records / 9);
 
-if($_GET['a'] == "Напред" && (($page + 1) <= $total_pages)){
+if(isset($_GET['a']) && $_GET['a'] == "Напред" && (($page + 1) <= $total_pages)){
 	$_GET['page']=$page+1;
-} else if($_GET['a'] == "Назад" && (($page - 1) > 0)){
+} else if(isset($_GET['a']) && $_GET['a'] == "Назад" && (($page - 1) > 0)){
 	$_GET['page']=$page-1;
 }
 

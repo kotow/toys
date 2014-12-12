@@ -1,5 +1,6 @@
 body{
 font-family: arial;
+padding:10px;
 }
 .ui-slider {
 	position: relative;
@@ -109,10 +110,17 @@ font-family: arial;
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-	border: 0.3em solid blue;
+	border: 0.3em solid #2dabf9;
 	border-radius: 50%;
 	font-weight: normal;
 	background-color: white;
+}
+
+#amount{
+background: none;
+color: black;
+border:none;
+font-weight:bold;
 }
 
 
@@ -166,16 +174,24 @@ width: 33%;
 background: url('/img/sun.jpg');
 background-size: 100% 100%;
 position: absolute;
-right: 5px;
+right: 15px;
 text-align: center;
+border-radius: 5px;
+border: 4px solid white;
+box-shadow: 2px 2px 2px #D5D5D5;
 }
 
 .toy{
-padding: 5px;
-width: 30%;
+margin: 0.5%;
+padding: 0.5%;
+width: 29%;
 display: inline-block;
+border-right: 1px solid #E7E7E7;
 }
 
+.toy:nth-child(3n+3), .toy:last-child{
+border: none;
+}
 .toys{
 width: 65%;
 display: inline-block;
@@ -191,11 +207,16 @@ color: white;
 font-weight: bold;
 font-size: 1.2em;
 background-color: rgb(237, 146, 29);
+border-radius:5px 5px 0px 0px;
 }
 
 select{
 width: 90%;
-height: 30px;
+height: 30px;;
+}
+
+select.all{
+color:#B9B9B9
 }
 
 fieldset{
@@ -216,6 +237,10 @@ color: white;
 
 .price{
 font-size: 1.2em;
-color: green;
+color: #0A9339;
 font-weight: bolder;
+}
+
+label{
+font-weight: bold;
 }
