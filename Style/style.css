@@ -182,9 +182,9 @@ box-shadow: 2px 2px 2px #D5D5D5;
 }
 
 .toy{
-margin: 0.5%;
+margin-top: 2%;
 padding: 0.5%;
-width: 29%;
+width: 30%;
 display: inline-block;
 border-right: 1px solid #E7E7E7;
 }
@@ -239,8 +239,13 @@ color: white;
 font-size: 1.2em;
 color: #0A9339;
 font-weight: bolder;
+padding:1%
 }
 
 label{
 font-weight: bold;
+}
+
+input[type='radio']:active{
+color:red;
 }

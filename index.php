@@ -113,7 +113,7 @@ if ($result->num_rows > 0) {
 
 <div class="toy">
 	<div class="image"><img src="<?=$row["image"]?>"/></div>
-	<div class="name"><?=$row["name"]?></div>
+	<div class="name" style="padding:1%"><?=$row["name"]?></div>
 	<div class="price"><?=$row["price"]?> лв.</div>
 </div>
 
